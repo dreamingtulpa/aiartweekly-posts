@@ -25,32 +25,32 @@ combined with ControlNET. I use it for many use cases. Putting characters and
 objects into an image is just one of them. So let's dive in. I start with this image made in
 Midjourney:
 
-![](tmp/assets/posts/sam_01.jpg)
+![](https://aiartweekly.s3.amazonaws.com/assets/posts/segment-anything-inpainting-with-stable-diffusion/sam_01.webp)
 
 The character is not how I want it to be. So I will composite a new character on
 the image. I created the character in Midjourney and used [SAM](https://segment-anything.com/demo#) to cut it out.
 We upload our image and mark the areas we want to cut out. Left click selects an area, right click deselects it.
 
-![](tmp/assets/posts/sam_02.jpg)
+![](https://aiartweekly.s3.amazonaws.com/assets/posts/segment-anything-inpainting-with-stable-diffusion/sam_02.webp)
 
 When we’re happy with our selection, we can cut out the object and save/copy it.
 
-![](tmp/assets/posts/sam_03.jpg)
+![](https://aiartweekly.s3.amazonaws.com/assets/posts/segment-anything-inpainting-with-stable-diffusion/sam_03.webp)
 
 I then use Photoshop to composite the character into my image.
 
-![](tmp/assets/posts/sam_04.jpg)
+![](https://aiartweekly.s3.amazonaws.com/assets/posts/segment-anything-inpainting-with-stable-diffusion/sam_04.webp)
 
 The image might look pretty good already, but the character doesn’t fit naturally in the scene. The lighting as well as the colors are off. The colors are also not on brand with the client. Fixing the brand colors can be done in photoshop, by adjusting the hue. In my case I adjust the yellow colors to pink.
 
-![](tmp/assets/posts/sam_05.jpg)
+![](https://aiartweekly.s3.amazonaws.com/assets/posts/segment-anything-inpainting-with-stable-diffusion/sam_05.webp)
 
 Now it’s time for AI to help.
 
 I will put this image into Automatic1111's img2img inpaiting tab, mask
 the knight in the image and adjust my settings as follows:
 
-![](tmp/assets/posts/sam_06.jpg)
+![](https://aiartweekly.s3.amazonaws.com/assets/posts/segment-anything-inpainting-with-stable-diffusion/sam_06.webp)
 
 The most important ones are setting
 
@@ -63,6 +63,6 @@ I put the same image in ControlNET with the `canny` model. This will create outl
 With this setup I write my prompt: `highly detailed 2d illustration of a knight holding a torch, in the style of
 fantasy d&d with dark black and bright pink colors` and generate a new image.
 
-![](tmp/assets/posts/sam_07.jpg)
+![](https://aiartweekly.s3.amazonaws.com/assets/posts/segment-anything-inpainting-with-stable-diffusion/sam_07.webp)
 
 It might not look like much, but details are what create a cohesive storytelling experience. Combining different tools together, AI or non AI, is incredibly powerful. It allows us to create in ways we haven’t been able to create ever before. I hope you’ve been enjoying this AI supported workflow breakdown. Keep creating and don't forget to have fun!
