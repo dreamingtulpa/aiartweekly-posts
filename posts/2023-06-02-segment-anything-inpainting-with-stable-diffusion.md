@@ -9,7 +9,7 @@ Hello AI Art Weekly community 👋
 been diving deep into AI tools since July last year and have worked on a lot of
 projects like an [interactive client
 pitch](https://nejcsusec.beehiiv.com/p/interactive-client-pitching) or turning [concept artwork into final
-products](https://nejcsusec.beehiiv.com/p/concept-final-product). and I want to show you how I use Stable Diffusion Inpainting to composite characters into images.
+products](https://nejcsusec.beehiiv.com/p/concept-final-product).
 
 In this post we'll cover how to add details to generated images by extracting a
 character from a source image with Meta's Segment Anything AI model and make use
