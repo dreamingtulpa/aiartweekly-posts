@@ -74,7 +74,7 @@ to the “Train” tab and select the “Training” sub-tab. You will see a dro
 menu on the top left where you select the embedding you just created -
 `charcoalstyle`.
 
-## Step 6: Start Training
+## Step 5: Start Training
 
 There are a lot of options here that are a bit tricky to get right and can cause
 memory issues, so I’m not going to change most of the values. If you want more
@@ -105,7 +105,7 @@ Once it’s complete, you should see the new embeddings located here
 need to copy them into the embeddings folder located in
 `stable-diffusion-webui\embeddings`.
 
-## Step 7: Check out the result.
+## Step 6: Check out the result.
 
 Go to the "txt2img" tab and generate an image using your new embedding. Type
 your prompt and add the name of the embedding, for example: `charcoalstyle-200`
