@@ -17,7 +17,7 @@ Here’s an example embedding where I didn’t use anyone’s artwork. I used 25
 images of grungy textures and scratches and trained them on the [v2-1_512_noema-prunted.ckpt](https://huggingface.co/stabilityai/stable-diffusion-2-1-base/tree/main) model which knows what a cat is.
 The text prompt for the following image was simply `cat art by grunge` with `grunge` being what I named the embedding.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_01.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_01.webp
 ~~~
 
 Cool, let’s begin!
@@ -26,22 +26,22 @@ Cool, let’s begin!
 
 For this example, I went to pinterest and saved 25 random images of charcoal drawings and textures. Embeddings work better when the style of every image is similar.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_02.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_02.webp
 ~~~
 
 ## Step 2: Use Birme to crop and scale all your images
 
 [Bulk Image Resizing Made Easy (Birme)](https://www.birme.net/) is a tool that allows you to do just that. The images have to be the same size you set in the training process or it may crash / give you bad results.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_03.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_03.webp
 ~~~
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_04.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_04.webp
 ~~~
 
 Go through each image and adjust the crops, then “Save as zip” when you are done. Extract the files into a new folder (512x512) inside of the folder where you saved the original images.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_05.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_05.webp
 ~~~
 
 ## Step 3: Preprocess images
@@ -55,12 +55,12 @@ directory”. I call it `processed`.
 
 Check "Use BLIP for captions", which will create a text file for each image describing the image. You don’t have to use this option, but you may get better results if you do when using text prompts with the embedding. You can also edit them if you want to describe each image in better detail.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_06.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_06.webp
 ~~~
 
 Once preprocessing is finished, you will see all the images (and a text file for each one) inside of the processed folder.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_07.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_07.webp
 ~~~
 
 ## Step 4: Create Embedding
@@ -72,7 +72,7 @@ The number of vectors per token number is based on how many images you are using
 
 Now click on the “Create embedding” button.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_08.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_08.webp
 ~~~
 
 Now you will want to restart Automatic1111 Web UI (webui-user.bat). Then go back
@@ -92,7 +92,7 @@ The dataset directory should be the path where the processed images are:
 
 Make sure the width and height sizes are the same as the processed images: 512x512
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_09.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_09.webp
 ~~~
 
 There are a few more options below to change.
@@ -105,7 +105,7 @@ There are a few more options below to change.
 - Change the value to `0.1` for “Drop out tags when creating prompts”
 - Finally check “deterministic” and click on Train Embedding.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_10.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_10.webp
 ~~~
 
 Once it’s complete, you should see the new embeddings located here
@@ -119,18 +119,18 @@ Go to the "txt2img" tab and generate an image using your new embedding. Type
 your prompt and add the name of the embedding, for example: `charcoalstyle-200`
 or `charcoalstyle-500`.
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_11.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_11.webp
   caption: `drawing of a cat, charcoalstyle-200`
 ~~~
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_12.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_12.webp
   caption: `charcoal drawing of a businessman sitting in a chair, charcoalstyle-100`
 ~~~
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_13.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_13.webp
   caption: `charcoal drawing of a business at the office, charcoalstyle-500`
 ~~~
 
-~~~ Image: https://aiartweekly.s3.amazonaws.com/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_14.webp
+~~~ Image: https://fly.storage.tigris.dev/aiartweekly/assets/posts/textual-inversion-and-how-to-train-your-own-embeddings-using-stable-diffusion/spiritform_14.webp
   caption: `abstract drawing, charcoalstyle-10`
 ~~~
